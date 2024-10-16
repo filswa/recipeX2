@@ -1,0 +1,18 @@
+{
+  "name": "recipex2",
+  "version": "1.0.0",
+  "description": "react-node app for storing and multiplying recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "author": "filip.swacha",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.9"
+  }
+}
