@@ -1,11 +1,17 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [text, setText] = useState("")
 
+  useEffect(()=>{
+    fetch("http://localhost:3000")
+    .then(response => response.json())
+    .then(data => setTimeout(() => setText(data.message), 3000))
+    .catch(error => console.log(error))
+  })
   return (
     <>
       <div>
@@ -18,11 +24,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          {text ? text : `Edit <code>src/App.tsx</code> and save to test HMR`}
         </p>
       </div>
       <p className="read-the-docs">
