@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav >
-      <ul >
+    <nav className="py-8">
+      <ul className="flex justify-between">
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -14,12 +14,14 @@ const Navbar = () => {
         <li>
           <Link to="/about">About</Link>
         </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/settings">Settings</Link>
-        </li>
+        <div>  
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/settings">Settings</Link>
+          </li>
+        </div>
       </ul>
     </nav>
   )
